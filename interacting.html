@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <script>
+
+        var huffalumps = {
+            character : "Huffalumps",
+            west : eeyore,
+            greet : function() {
+                console.log("I dont know who Huffalumps is.")
+            }
+        };
+
+        var eeyore = {
+            character : "Eeyore",
+            east : huffalumps,
+            south : kanga,
+            greet : function() {
+                console.log("Something Depressing.")
+            }
+        };
+
+        var kanga = {
+            character : "Kanga",
+            north : eeyore,
+            south : robin,
+            greet : function() {
+                console.log("Kangaroo stuff.")
+            }
+        };
+
+        var robin = {
+            character : "Christopher Robin",
+            north : kanga,
+            west : owl,
+            east : rabbit,
+            south : pooh,
+            greet : function() {
+                console.log("Something boyish.")
+            }
+        };
+
+        var owl = {
+            character : "Owl",
+            south : piglet,
+            east : robin,
+            greet : function() {
+                console.log("Some wisdom.")
+            }
+        };
+
+        var rabbit = {
+            character : "Rabbit",
+            east : gopher,
+            west : robin,
+            south : bees,greet : function() {
+                console.log("Something mean.")
+            }
+        };
+
+        var gopher = {
+            character : "Gopher",
+            west : rabbit,
+            greet : function() {
+                console.log("Who.")
+            }
+        };
+
+        var piglet = {
+            character : "Piglet",
+            east : pooh,
+            north : owl,
+            greet : function() {
+                console.log("Oh d-d-d-d-dear! I wasn't expecting company!")
+            }
+        };
+
+        var pooh = {
+            character : "Winnie the Pooh",
+            north : robin,
+            east : bees,
+            west : piglet,
+            south : tigger,
+            greet : function() {
+                console.log("Oh brother.")
+            }
+        };
+
+        var bees = {
+            character : "Bees",
+            north : rabbit,
+            west : pooh,
+            greet : function() {
+                console.log("Have you seen a bear?")
+            }
+
+        };
+
+        var tigger = {
+            character : "Tigger",
+            north : pooh,
+            greet : function() {
+                console.log("The wonderful thing about Tiggers is Tiggers are wonderful things!")
+            }
+        };
+
+
+
+        var player = { location : tigger }
+
+        function move(dir){
+            if(dir == "north"){
+                if(player.location.north == null){
+                    console.log("You may not go that way.")
+                }
+                else {
+                    player.location = player.location.north;
+                    console.log("You are now at " + player.location.character + "'s house");
+                    console.log(player.location.greet());
+                }
+            }
+            if(dir == "south"){
+                if(player.location.south == null){
+                    console.log("You may not go that way.")
+                }
+                else {
+                    player.location = player.location.south;
+                    console.log("You are now at " + player.location.character + "'s house");
+                    console.log(player.location.greet());
+                }
+            }
+            if(dir == "east"){
+                if(player.location.east == null){
+                    console.log("You may not go that way.")
+                }
+                else {
+                    player.location = player.location.east;
+                    console.log("You are now at " + player.location.character + "'s house");
+                    console.log(player.location.greet());
+                }
+            }
+            if(dir == "west"){
+                if(player.location.west == null){
+                    console.log("You may not go that way.")
+                }
+                else {
+                    player.location = player.location.west;
+                    console.log("You are now at " + player.location.character + "'s house");
+                    console.log(player.location.greet());
+                }
+            }
+        }
+
+        </script>
+    </body>
+</html>
+
+
